@@ -48,7 +48,7 @@ services:
     container_name: lark-etcd
     restart: always
     ports:
-      - 12379:2379
+      - 2379:2379
     networks:
       lark-network:
         ipv4_address: "192.168.9.10"
@@ -63,7 +63,7 @@ services:
     container_name: lark-mysql-user
     restart: always
     ports:
-      - 13306:3306
+      - 3306:3306
     networks:
       lark-network:
         ipv4_address: "192.168.9.20"
@@ -76,41 +76,11 @@ services:
     privileged: true
     environment:
       TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: lark2022
-      MYSQL_USER: lark
-      MYSQL_PASSWORD: lark2022
+      MYSQL_ROOT_PASSWORD: 139639hh
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 139639hh
       ALLOW_HOST: "%"
-      MYSQL_DATABASE: lark_user
-      LANG: en_US.UTF-8
-    command: [
-        '--character-set-server=utf8mb4',
-        '--collation-server=utf8mb4_unicode_ci',
-        '--default-time-zone=+8:00'
-    ]
-
-  lark-mysql-msg:
-    image: mysql:8.0.29
-    container_name: lark-mysql-msg
-    restart: always
-    ports:
-      - 13307:3306
-    networks:
-      lark-network:
-        ipv4_address: "192.168.9.21"
-    volumes:
-      - ./configs/docker/mysql/lark_chat_msg:/docker-entrypoint-initdb.d
-      - /Volumes/data/lark/mysql/chat_msg/data:/var/lib/mysql
-      #- /Volumes/data/lark/mysql/chat_msg/conf:/etc/mysql
-      - /Volumes/data/lark/mysql/chat_msg/mysql-files:/var/lib/mysql-files
-      - /Volumes/data/lark/mysql/chat_msg/log:/var/log/mysql
-    privileged: true
-    environment:
-      TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: lark2022
-      MYSQL_USER: lark
-      MYSQL_PASSWORD: lark2022
-      ALLOW_HOST: "%"
-      MYSQL_DATABASE: lark_chat_msg
+      MYSQL_DATABASE: lark_user,lark_chat_msg
       LANG: en_US.UTF-8
     command: [
         '--character-set-server=utf8mb4',
@@ -123,7 +93,7 @@ services:
     container_name: lark-redis
     restart: always
     ports:
-      - 63791:6379
+      - 6379:6379
     networks:
       lark-network:
         ipv4_address: "192.168.9.30"
@@ -237,8 +207,8 @@ services:
       - /Volumes/data/lark/minio/data:/data
       - /Volumes/data/lark/minio/config:/root/.minio
     environment:
-      MINIO_ROOT_USER: admin
-      MINIO_ROOT_PASSWORD: lark2022
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: 139639hh
       MINIO_ACCESS_KEY: SEv0QKlwqQ36M1eV
       MINIO_SECRET_KEY: sZVZR1RD8Pcy73NANvk6vbMmoDsGSSOk
 
@@ -290,5 +260,5 @@ networks:
     ipam:
       driver: default
       config:
-          subnet: 192.168.9.0/24
-          ip_range: 192.168.9.0/24
+        - subnet: 192.168.9.0/24
+        - ip_range: 192.168.9.0/24
