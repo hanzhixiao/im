@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 nohup redis-server --requirepass lark2022 --appendonly yes &
 sleep 30
 

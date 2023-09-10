@@ -1,4 +1,4 @@
-endpoint: 'localhost:19000'
+endpoint: 'localhost:9000'
 options:
   secure: false
   credentials:

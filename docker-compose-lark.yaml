@@ -77,8 +77,6 @@ services:
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: 139639hh
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 139639hh
       ALLOW_HOST: "%"
       MYSQL_DATABASE: lark_user,lark_chat_msg
       LANG: en_US.UTF-8
@@ -109,8 +107,9 @@ services:
     sysctls:
       net.core.somaxconn: 1024
     command: [
-#    'redis-server --requirepass lark2022 --appendonly yes',
-    '/scripts/redis/load_script.sh',
+      'chmod +x /scripts/redis/load_script.sh',
+      #    'redis-server --requirepass lark2022 --appendonly yes',
+      '/scripts/redis/load_script.sh',
     ]
 
 #  lark-mongo-msg:
@@ -209,8 +208,7 @@ services:
     environment:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: 139639hh
-      MINIO_ACCESS_KEY: SEv0QKlwqQ36M1eV
-      MINIO_SECRET_KEY: sZVZR1RD8Pcy73NANvk6vbMmoDsGSSOk
+#    command: minio server /data --console-address ':9000'
 
   lark-prometheus:
     image: bitnami/prometheus:2.36.2
