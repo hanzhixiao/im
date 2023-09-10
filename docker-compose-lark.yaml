@@ -188,7 +188,7 @@ services:
 #      KAFKA_LISTENERS: INSIDE://:9092,OUTSIDE://:9093
 #      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT"
 #      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
       KAFKA_CFG_LOG_RETENTION_HOURS: 1
     depends_on:
       - lark-zookeeper
@@ -261,4 +261,4 @@ networks:
       driver: default
       config:
         - subnet: 192.168.9.0/24
-        - ip_range: 192.168.9.0/24
+          ip_range: 192.168.9.0/24
