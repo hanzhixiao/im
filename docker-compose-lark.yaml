@@ -261,4 +261,4 @@ networks:
       driver: default
       config:
         - subnet: 192.168.9.0/24
-          ip_range: 192.168.9.0/24
+#          ip_range: 192.168.9.0/24
