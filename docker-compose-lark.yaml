@@ -195,7 +195,7 @@ services:
     image: minio/minio
     ports:
       - 10005:9000
-      - 9090:9090
+      - 9091:9091
     container_name: lark-minio
     volumes:
       - /Volumes/data/lark/minio/data:/data
@@ -204,7 +204,7 @@ services:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: 139639hh
     restart: always
-    command: minio server /data --console-address ':9090'
+    command: minio server /data --console-address ':9091'
   #    image: bitnami/minio:2022.12.12
 #    container_name: lark-minio
 #    restart: always
