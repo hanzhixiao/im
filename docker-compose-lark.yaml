@@ -107,7 +107,6 @@ services:
     sysctls:
       net.core.somaxconn: 1024
     command: [
-      'chmod +x /scripts/redis/load_script.sh',
       #    'redis-server --requirepass lark2022 --appendonly yes',
       '/scripts/redis/load_script.sh',
     ]
@@ -208,7 +207,7 @@ services:
     environment:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: 139639hh
-#    command: minio server /data --console-address ':9000'
+    command: minio server /data --console-address ':9000'
 
   lark-prometheus:
     image: bitnami/prometheus:2.36.2
