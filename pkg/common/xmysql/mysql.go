@@ -133,9 +133,9 @@ func ConnectDB(cfg *conf.Mysql) (db *gorm.DB, err error) {
 		SetConnMaxLifetime(time.Duration(cfg.MaxLifetime) * time.Millisecond))
 
 	db = db.Debug()
-	err = db.AutoMigrate(po.Avatar{},po.User{},po.OauthUser{},po.UserLocation{},
-	po.ChatInvite{},po.Chat{},po.UserLocation{},po.FundFlow{},po.ChatMember{},po.Message{},
-	po.Payment{},po.Wallet{},po.RedEnvelopeRecord{},po.RedEnvelope{},po.)
+	err = db.AutoMigrate(po.Avatar{}, po.User{}, po.OauthUser{}, po.UserLocation{},
+		po.ChatInvite{}, po.Chat{}, po.UserLocation{}, po.FundFlow{}, po.ChatMember{}, po.Message{},
+		po.Payment{}, po.Wallet{}, po.RedEnvelopeRecord{}, po.RedEnvelope{})
 	if err != nil {
 		xlog.Error(err.Error())
 		return
@@ -158,7 +158,7 @@ SetMaxIdleConns：设置池中最大空闲连接数，默认值是2. 理论上�
 SetConnMaxIdleTime：设置池中连接在关闭之前可用空闲的最长时间，默认是不限制时间。如果设置为2小时，表示池中自上次使用以后在池中空闲了2小时的连接将标为过期被清理。
 SetConnMaxLifetime：设置池中连接关闭前可以保持打开的最长时间，默认是不限制时间。
 */
-func AutoMigrate(tables ...interface{})  {
+func AutoMigrate(tables ...interface{}) {
 	err := cli.db.AutoMigrate(tables)
 	if err != nil {
 		panic(err)
