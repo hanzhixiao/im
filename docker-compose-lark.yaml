@@ -192,22 +192,35 @@ services:
       - lark-zookeeper
 
   lark-minio:
-    image: bitnami/minio:2022.12.12
-    container_name: lark-minio
-    restart: always
+    image: minio/minio
     ports:
-      - '9000:9000'
-      - '9001:9001'
-    networks:
-      lark-network:
-        ipv4_address: "192.168.9.70"
+      - 10005:9000
+      - 9090:9090
+    container_name: lark-minio
     volumes:
       - /Volumes/data/lark/minio/data:/data
       - /Volumes/data/lark/minio/config:/root/.minio
     environment:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: 139639hh
-    command: minio server /data --console-address ':19000'
+    restart: always
+    command: minio server /data --console-address ':9090'
+  #    image: bitnami/minio:2022.12.12
+#    container_name: lark-minio
+#    restart: always
+#    ports:
+#      - '9000:9000'
+#      - '9001:9001'
+#    networks:
+#      lark-network:
+#        ipv4_address: "192.168.9.70"
+#    volumes:
+#      - /Volumes/data/lark/minio/data:/data
+#      - /Volumes/data/lark/minio/config:/root/.minio
+#    environment:
+#      MINIO_ROOT_USER: root
+#      MINIO_ROOT_PASSWORD: 139639hh
+#    command: minio server /data --console-address ':19000'
 
   lark-prometheus:
     image: bitnami/prometheus:2.36.2
