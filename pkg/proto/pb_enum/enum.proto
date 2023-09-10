@@ -1,0 +1,227 @@
+syntax ="proto3";
+package pb_enum;
+option go_package = "im/pkg/proto/pb_enum;pb_enum";
+
+enum ACCOUNT_TYPE
+{
+  UNKNOWN_ACCOUNT_TYPE = 0;
+  MOBILE = 1; // 手机登录
+  im = 2; // im账户登录
+  UID = 3; // im账户UID
+}
+
+enum TOPIC
+{
+  UNKNOWN_TOPIC = 0;
+  CHAT = 1; // 聊天
+  CHAT_INVITE = 2; // 聊天邀请
+  RED_ENVELOPE = 3; // 红包
+}
+
+enum SUB_TOPIC
+{
+  UNKNOWN_SUB_TOPIC = 0;
+  // 1000~1999
+  CHAT_MSG = 1000; // 聊天消息
+  CHAT_OPERATION = 1001; // 消息操作
+  CHAT_JOINED_GROUP_CHAT = 1002; // 加入群通知
+  CHAT_QUIT_GROUP_CHAT = 1003; // 退出群通知
+  CHAT_REMOVE_CHAT_MEMBER = 1004; // 移除群
+
+  // 2000~2999
+  CHAT_INVITE_REQUEST = 2000; // 加入Chat邀请
+  // CHAT_INVITE_ADDED_CONTACT = 2001; // 成为联系人
+
+  // 3000~3999
+  CHAT_GIVE_RED_ENVELOPE = 3000; // 发红包
+  CHAT_RECEIVE_RED_ENVELOPE = 3001; // 收红包
+}
+
+enum MESSAGE_TYPE
+{
+  NEW = 0;
+  RESP = 1;
+}
+
+enum CHAT_TYPE
+{
+  UNKNOWN_CHAT_TYPE = 0;
+  PRIVATE = 1; // 私聊
+  GROUP = 2; // 群聊
+}
+
+enum PLATFORM_TYPE
+{
+  UNKNOWN_PLATFORM_TYPE = 0;
+  IOS = 1;
+  ANDROID = 2;
+  MAC = 3;
+  WINDOWS = 4;
+  WEB = 5;
+}
+
+enum MSG_FROM
+{
+  UNKNOWN_MSG_FROM = 0;
+  USER = 1; // 用户消息
+  SYSTEM = 2; // 系统消息
+}
+
+enum MSG_TYPE
+{
+  UNKNOWN_MSG_TYPE = 0;
+  TEXT = 1; // 文本
+  POST = 2;
+  IMAGE = 3;
+  FILE = 4;
+  AUDIO = 5;
+  MEDIA = 6;
+  STICKER = 7;
+  INTERACTIVE = 8;
+  SHARE_CHAT = 9;
+  SHARE_USER = 10;
+  CHAT_INVITE_MSG = 11; // 邀请
+  ACCEPTED_CHAT_INVITE = 12; // 同意邀请
+  JOINED_GROUP_CHAT = 13; // 加入群聊
+  QUIT_GROUP_CHAT = 14; // 退出群聊
+  REMOVE_CHAT_MEMBER = 15; // 将成员移除群
+  GIVE_RED_ENV = 16; // 派红包
+  RECEIVE_RED_ENV = 17; // 收红包
+}
+
+enum CHAT_STATUS
+{
+  NORMAL = 0; // 正常模式
+  MUTE = 1; // 开启免打扰
+  BANNED = 2; // 被禁言
+  QUITTED = 3; // 退出会话
+  DELETED = 4; // 被删除
+  REMOVED = 5; // 被删除(CHAT GROUP)
+  NON_CONTACT = 6; // 非联系人
+}
+
+enum INVITE_ROLE
+{
+  UNKNOWN_INVITE_ROLE = 0;
+  INITIATOR = 1; // 发起者
+  APPROVER = 2; // 审批人
+}
+
+enum INVITE_HANDLE_RESULT
+{
+  UNKNOWN_INVITE_HANDLE_RESULT = 0;
+  ACCEPT = 1; // 同意
+  REFUSE = 2; // 拒绝
+}
+
+enum AVATAR_OWNER
+{
+  UNKNOWN_AVATAR_OWNER = 0;
+  USER_AVATAR = 1; // 用户头像
+  CHAT_AVATAR = 2; // 群头像
+}
+
+enum MSG_OPERATION {
+  UNKNOWN_MSG_OPERATION = 0;
+  RECALL = 1; // 消息撤回
+  URGENT = 2; // 消息加急
+}
+
+enum CHAT_GROUP_ROLE {
+  ORDINARY_MEMBER  = 0; // 普通成员
+  ADMINISTRATOR = 8; // 管理员
+  MASTER = 9; // 群主
+}
+
+enum ORDER_TYPE {
+  ASC = 0;
+  DESC = 1;
+}
+
+enum GENDER {
+  UNKNOWN_GENDER = 0;
+  MALE = 1; // 男
+  FEMALE = 2; // 女
+}
+
+enum LOGIN_CHANNEL {
+    UNKNOWN_CHANNEL = 0;
+    GITHUB = 1;
+}
+
+enum RED_ENVELOPE_TYPE {
+  UNKNOWN_ENVELOPE_TYPE  = 0;
+  AVERAGE = 1; // 均分红包
+  RANDOM = 2; // 碰运气红包
+  FIXED = 3; // 红包固定金额
+}
+
+enum RECEIVER_TYPE {
+  UNKNOWN_RECEIVER_TYPE = 0;
+  PRIVATE_CHAT_DESIGNATED = 1; // 私聊指定人
+  GROUP_CHAT_ALL_MEMBER = 2; // 群聊所有人
+  GROUP_CHAT_DESIGNATED = 3; // 群聊指定人
+}
+
+enum WALLET_TYPE
+{
+  UNKNOWN_WALLET_TYPE = 0;
+  CURRENCY = 1; // 货币 单位(分)
+  DIAMOND = 2; // 钻石
+  GOLD_COIN = 3; // 金币
+  SILVER_COIN = 4; // 银币
+  BRONZE_COIN = 5; // 铜币
+  POINT = 6; // 积分
+}
+
+enum WALLET_STATUS
+{
+  UNKNOWN_WALLET_STATUS = 0;
+  ACTIVE = 1; // 激活状态
+  INACTIVE = 2; // 非活动状态
+  FROZEN = 3; // 冻结状态
+  CLOSED  = 4; // 关闭状态
+}
+
+enum RED_ENVELOPE_STATUS {
+  CREATED_ENVELOPE  = 0;
+  ISSUED = 1; // 已发放
+  RECEIVED = 2; // 已领完
+  EXPIRED = 3; // 已过期且退还剩余红包
+}
+
+enum PAYMENT_STATUS {
+  CREATED_UNPAID  = 0; // 未支付
+  PAYING = 1; // 支付中
+  PAID = 2; // 已支付
+  FAILED = 3; // 支付失败
+}
+
+enum TRADE_TYPE {
+  UNKNOWN_TRADE_TYPE = 0;
+  INCOME = 1; // 收入
+  EXPENSE = 2; // 支出
+}
+
+enum TRADE_TYPE_ID {
+  UNKNOWN_TRADE_TYPE_ID = 0;
+  RED_ENVELOPE_SEND_ID = 1; // 发放红包
+  RED_ENVELOPE_RECEIVE_ID = 2; // 收红包
+  RED_ENVELOPE_RETURN_ID = 3; // 红包余额退还
+}
+
+enum GRAB_RESULT {
+  GRAB_FAILED = 0; // 失败
+  GRAB_SUCCESS = 1;  // 成功
+}
+
+enum OPEN_RESULT {
+  OPEN_FAILED = 0; // 失败
+  OPEN_SUCCESS = 1;  // 成功
+}
+
+enum RED_ENVELOPE_RECEIVE_STATUS {
+  RECEIVING = 0;
+  RECEIVE_SUCCESS = 1;
+  RECEIVE_FAILED = 2;
+}

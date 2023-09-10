@@ -1,0 +1,14 @@
+[2023-09-06 23:16:35.978]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Password' Error:Field validation for 'Password' failed on the 'len' tag
+Key: 'SignUpReq.Code' Error:Field validation for 'Code' failed on the 'min' tag
+Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'required' tag
+[2023-09-06 23:16:54.009]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Password' Error:Field validation for 'Password' failed on the 'len' tag
+Key: 'SignUpReq.Code' Error:Field validation for 'Code' failed on the 'min' tag
+Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'required' tag
+[2023-09-06 23:18:19.391]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Code' Error:Field validation for 'Code' failed on the 'min' tag
+Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'required' tag
+[2023-09-06 23:21:48.495]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误json: cannot unmarshal number into Go struct field SignUpReq.code of type string
+[2023-09-06 23:22:04.705]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误invalid character '}' looking for beginning of object key string
+[2023-09-06 23:22:08.535]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'required' tag
+[2023-09-06 23:24:41.601]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'len' tag
+[2023-09-06 23:25:16.835]	[33mWARN[0m	ctrl_auth/ctrl_auth_sign_up.go:18	602请求参数错误Key: 'SignUpReq.Udid' Error:Field validation for 'Udid' failed on the 'len' tag
+[2023-09-06 23:25:38.374]	[33mWARN[0m	svc_auth/svc_auth_sign_up.go:28	2003查询失败

@@ -1,0 +1,1 @@
+[2023-09-06 21:40:02.496]	[31mERROR[0m	xgrpc/server.go:36	listen tcp 0.0.0.0:7000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

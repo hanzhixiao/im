@@ -1,0 +1,1 @@
+[2023-09-06 21:30:42.368]	[31mERROR[0m	xmongo/mongo.go:62	connection() error occurred during connection handshake: auth error: sasl conversation error: unable to authenticate using mechanism "SCRAM-SHA-256": (AuthenticationFailed) Authentication failed.

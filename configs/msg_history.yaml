@@ -1,0 +1,28 @@
+name: lark_msg_history_server
+server_id: 1
+log: "./configs/logger.yaml"
+etcd:
+  endpoints: ["localhost:2379"]
+  username:
+  password:
+  schema: lark
+  read_timeout: 5000
+  write_timeout: 5000
+  dial_timeout: 5000
+mysql:
+  max_open_conns: 20
+  max_idle_conns: 10
+  max_lifetime: 120000
+  max_idle_time: 7200000
+  charset: utf8
+  sources:
+    - {address: "localhost:3306",username: root,password: 139639hh,db: lark}
+redis:
+  address: ["localhost:6379"]
+  db: 0
+  password: lark2022
+  prefix: "LK:"
+msg_consumer:
+  address: ["localhost:9092"]
+  topic: ["to_inbox"]
+  group_id: mysql
