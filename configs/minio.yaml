@@ -1,4 +1,4 @@
-endpoint: 'localhost:9090'
+endpoint: 'localhost:10005'
 options:
   secure: false
   credentials:
